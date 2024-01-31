@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>identifier식별자</title>
+</head>
+
+<body>
+
+  <script>
+    // 식별자는 중복되어서는 안됩니다.
+    // 자바스크립트에서 var로 변수를 선언하면 에러가 나지 않으므로 조심!
+    var apple = '사과'
+    var apple = '애플'
+    console.log(apple); //마지막 저장 값으로 출력
+
+
+
+    // 식별자의 이름은 대/소문자를 철저하게 구분합니다.
+    var banana = '바나나'
+    var BANANA = '빠나나'
+    console.log(banana);
+    console.log(BANANA); //변수는 대문자로 작성하지는 않음-개발자들간에 약속
+
+
+
+    // 식별자는 숫자로만 이루어지거나, 숫자로 시작할수 없음
+    var dog700 = 365; //변수이름을 숫자로만 구성 불가능(값으로 인식함)
+    // var 7frog = 244; (x)
+    // var 000 = 2; (x)
+
+
+
+
+    // 식별자는 특수기호 작성이 불가능 합니다.
+    // $, _ 는 가능 (사용하기로 한 곳이 약속되어있음)
+    // var my-name = '홍길동' (x) 케밥케이스
+    var myname = '홍길동'
+    var myName = '홍길동' //주로 카멜케이스를 사용 
+    var my_name = '홍길동' //(x) snake case 잘못된건 아니지만 쓰지않음(파이썬,자바에서는 씀) 
+
+    var myPhoneNumber = '01012345678'; //camel
+    var my_phone_number = '01012345678'; //snake
+    var MyPhoneNumber = '01012345678'; //pascal
+    var strMyPhoneNumber = '01012345678'; //Hungarian
+
+
+
+
+  
+    //식별자 이름을 한글 혹은 영어 이외의 언어로 작성하는 것은 
+    //에러는 아니지만 권장하지않음
+    var 과일 = '오렌지' //(x) 동작은 되지만 식별자로 한글은 별로  
+  
+  
+
+
+    
+
+  
+  </script>
+
+</body>
+
+</html>
