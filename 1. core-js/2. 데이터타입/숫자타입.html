@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    var integer = 100; //정수 (number)
+    var float = 3.14; //실수 (number)
+
+
+    //타입 확인용 키워드 typeof
+    console.log(typeof integer);
+    console.log(typeof float);
+
+    var bin = 0b1000010;  //0b :이진수표현가능
+    console.log(bin);
+
+    var oct = 0o102;   //0o :8진수
+    console.log(oct);
+
+    var hex = 0xAC00;  //0x :16진수
+    console.log(hex);
+
+    console.log(10 / 4);
+
+    //어떠한 숫자든 0으로 나눌 수 없습니다.
+    console.log(30 / 0);  //infinity 0으로 나눌순없음(자바로 0 나누면 에러남)
+
+    // NaN : not a Number -> 숫자가 아니다
+    // 잘못된 연산, 표현할 수 없는 값의 결과
+    console.log(30 /'메롱');
+
+  </script>
+
+</body>
+</html>
