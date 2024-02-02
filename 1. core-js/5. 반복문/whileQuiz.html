@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
+
 
   <script>
-/*
+    /*
 1. 정수를 두개 입력받으세요. (x, y)    -> 프롬포트 함수 두번 사용해서 각각따로 받으세요
 2. x부터 y까지의 누적합계를 while을 사용하여 구하는 코드를 작성하세요.
 ex) 입력: 3, 7 -> "3부터 7까지의 누적합계: 25"
@@ -22,44 +24,50 @@ ex) 입력: 3, 7 -> "3부터 7까지의 누적합계: 25"
 - while문을 if else 로 나눠서 두번 쓰는 것은 지양하겠습니다.
 */
 
-var x = +prompt('첫번째 정수를 입력하세요.');
-var y = +prompt('두번째 정수를 입력하세요.');
 
-var total = 0;
-var z = x;
-var i = y;
+    var x = +prompt('첫번째 정수를 입력하세요.');
+    var y = +prompt('두번째 정수를 입력하세요.');
 
+    if(x > y) {
+      var temp = y;
+      y = x;
+      x = temp;                      //또 다른 변수를 주고 값을 스위칭
+    }
 
-
-while(x <= y) {
-  total += x;
-  
-  x++;
-}
-console.log(`${z}부터 ${y}까지의 누적합계 : ${total}`);
+    var total = 0;
+    var z = x;
+    
 
 
+    while (x <= y) {
+        total += x;
 
+        x++;
+        
+      } 
+      console.log(`${z}부터 ${y}까지의 누적합계 : ${total}`);
+     
+    
 
-while (x >= y) {
-      
-  total += y;
-  
-  y++;
-  
-}
-
-console.log(`${i}부터 ${x}까지의 누적합계 : ${total}`);
-
+   
+    
 
 
 
 
+    // while(x <= y) {
 
+
+    //  total += x;
+
+    //  x++;
+    // }
+    // console.log(`${z}부터 ${y}까지의 누적합계 : ${total}`);
   </script>
 
 
 
 
 </body>
+
 </html>
