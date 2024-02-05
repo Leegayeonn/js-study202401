@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 우리반 학생들 4과목 점수 (국영수탐)
+    //  var kim = [67,89,92,32];
+    //  var lee = [100,87,55,67];
+    //  var park = [23,44,100,22];
+
+    var ourStudentScore = [
+      [67, 89, 92, 32],
+      [100, 87, 55, 67],
+      [23, 44, 100, 22]
+    ];
+
+    console.log(ourStudentScore);
+    console.log(ourStudentScore[1]);
+    console.log(ourStudentScore[2]); //array
+    console.log(ourStudentScore[2][1]); //인덱스 안에 인덱스 
+
+    //반 평균을 구해봅시다.
+    //한 학생의 평균의 총합을 저장할 변수
+    var ourAverage = 0;
+
+    for(var studentScore of ourStudentScore) {
+      //studentScore 변수에는 한 학생의 점수 배열이 전달됨.
+
+      var eachTotal = 0; //한 학생의 4과목 총점.
+      for(var score of studentScore){
+        //score변수에는 한 학생의 점수가 하나씩 전달
+        eachTotal += score; //eachTotal에 4과목 점수를 누적해서 더함.
+      }
+      // 한 학생의 평균 점수 구하기
+      var eachAverage = eachTotal/studentScore.length; //한 학생의 점수 합계를 과목수로 나눔.
+      ourAverage += eachAverage;
+    }
+
+    var classAverage = ourAverage/ourStudentScore.length
+    console.log(classAverage);
+    console.log(`우리반 평균: ${Math.round(classAverage*100)/100}점`);//반올림 함수 : Math.round()
+    console.log(`우리반 평균: ${classAverage}점`);
+
+   
+
+
+
+
+
+  </script>
+</body>
+
+</html>
