@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    var z = 'hello'; //전역 변수(global)
+
+    //즉시 실행 함수(정의와 동시에 실행되는 함수)
+    (function(x,y) {
+      console.log(`x+y = ${x+y}`);
+    })(60, 70);
+
+    //재귀 함수 
+    //함수 내에서 자기 자신을 다시 호출하여 작업을 수행하는 함수.
+    // 종료 조건을 직접 작성해야함.
+    console.log('-----------------------------------------------');
+
+
+    /*
+    function countdown(n) {
+      if(n < 0) return;           //함수강제중단 return 사용
+      alert(n);
+      countdown(n-1);
+      
+    }
+    countdown(5)
+    console.log('-----------------------------------------------');
+    
+
+    function factorial(n) {
+      if(n === 1) return 1;
+      return n * factorial(n-1);
+    }
+
+    
+
+    console.log(`10!: ${factorial(10)}`);
+
+    */
+
+   //중첩 함수 : 함수안에 함수를 또 정의한 형태
+   console.log('-----------------------------------------------');
+   
+   function outer() {
+   var x = 1;  //outer함수 내에서만 사용가능한 지역변수
+   
+
+    //헬퍼 함수
+    function inner() {
+      var y = 2;  //inner함수내에서만 사용가능한 지역변수
+      console.log(`x+y = ${x+y}`);
+    }
+    inner();  //outer함수 내에서만 사용이 가능합니다.
+    console.log(x);  //호출가능
+    //console.log(y);  //inner함수는 호출 완료되었기떄문에 변수는 출력되지않음.inner내에서만 유효
+ 
+   }
+   var z = 'byebye'
+
+   //inner(); -> outer 함수내에 선언된함수(outer를 호출하지 않으면 애초에 존재하지않는 함수)
+   outer();  //outer를 먼저 호출하고 그안에 inner 호출하면 됨.
+   
+   //console.log(y); //함수 안쪽 변수는 호출 불가능,y는 inner내에서만 유효
+   //console.log(x); //이미 호출완료된 함수는 이후에 메모리 지워짐. (지역변수 : 그 함수(지역)에서만 사용가능)
+
+   console.log(z);
+
+  </script>
+
+</body>
+</html>
