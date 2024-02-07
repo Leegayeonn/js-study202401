@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+   //1.변수 중복 선언 불가능
+   let x = 100;
+   //let x = 200; (x) 
+
+   //2.블록레벨 스코프를 인정.
+   if(true) {
+    let y =100 ;
+    console.log('if문 내부: '+ y);
+   }
+  //console.log('if문 내부: '+ y);
+   
+
+  //3. 변수 호이스팅이 발생하지 않음. //변수 선언하고 값 줘야한다. 반대가 되면 let은 에러
+  z = 200;  //초기화하기전에 z에 접근할수없다는 에러메시지가 뜬다.
+
+  console.log(z);
+
+  let z;
+
+  </script>
+
+
+</body>
+</html>
