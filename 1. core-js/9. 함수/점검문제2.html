@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+ /*
+  Q. n개의 정수를 전달하면 해당 정수들의 총합과 평균을 
+     반환하는 함수 calcNumbersTotalAndAverage를 작성하세요.
+*/
+  
+function calcNumbersTotalAndAverage(...numbers) {
+      //spread 문법을 사용하면 낱개로 전달되는 여러개의 값을 배열로 묶어서 함수 내부로 전달.
+      
+      var total = 0;
+      for(var n of numbers){
+        total += n;
+        
+      }
+      
+      return [
+        total, total/numbers.length
+      ]
+    }
+    var result = calcNumbersTotalAndAverage(49,49);
+    console.log(`정수의 총합: ${result[0]}`);
+    console.log(`정수의 평균: ${result[1]}`);
+
+
+    
+    //객체에서 프로퍼티의 키를 생략하면 변수명 키가 된다.
+    //키와 값이 동일할때 키값 생략가능 
+    // 
+    
+ 
+
+
+
+
+  </script>
+
+
+</body>
+</html>
