@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+    const emp = {
+      empName: '뽀로로',
+      age: 4,
+      hireDate: '2021-01-01',
+      birthDay: '2020-02-08'
+    };
+
+    // 순서가 없음: 프로퍼티이름과 변수 동일하게   const {} = emp;
+    const {empName, birthDay, age} = emp;
+
+    console.log(`내이름은 ${empName}이고 생일은${birthDay}이고 나이는 ${age}살이야`);
+
+
+    // 기본은 프로퍼티이름과 변수 동일하게하지만 바꾸고싶다면 -> : 사용
+    const {empName:en, birthDay:bd, age:a} = emp;
+
+    console.log(`내이름은 ${en}이고 생일은${bd}이고 나이는 ${a}살이야`);
+
+    console.log('==============================================');
+
+    const {birthDay: bDay, ...others} = emp;
+
+    console.log(bDay);
+    console.log(others);
+
+
+    //객체 복사
+    console.log('---------------------------------------------');
+    const copyEmp = {
+      ...emp, //객체 복사
+      address : '마포구',//값 추가
+      hobbies : ['산책','수영'],  //값 추가
+      age: 17  //값 수정
+    };
+    
+    console.log(copyEmp);
+    console.log(emp);
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>
