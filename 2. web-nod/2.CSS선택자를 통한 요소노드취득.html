@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id = "fruits">
+    <li class="fr apple">사과</li>
+    <li class="fr banana">바나나</li>
+    <li class="fr grape">포도</li>
+    <li class="fr peach">복숭아</li>
+  </ul>
+
+  <script>
+
+    //css요소 선택 (querySelector)
+
+    // const $grape = document.querySelector('.grape');
+    // const $grape = document.querySelector('#fruits li:nth-child(3)');
+    const $grape = document.querySelector('.banana + li'); //인접형제요소 선택자 + 도 가능
+    console.log($grape);
+    
+    $grape.textContent = '맛있는 포도'
+
+
+    
+
+    //querySelector는 발견된 첫번쨰 태그만 가져옴.    //선택자 지목은 앞에 . 붙히는거 알지?
+    const $fr = document.querySelector('.fr');
+    console.log($fr);
+
+    //querySelectorAll 은 배열 문법을 사용할수없다.(key 와 value로 구성 for of문은 된다.)
+    //모든 태그 가져옴(노드리스트:배열은아니고 유사배열객체)
+    //그래서 유사배열을 실제배열로 바꿔서 쓰는것이 좋습니다.
+    const $frAll = document.querySelectorAll('.fr');
+    console.log($frAll);
+
+    // $frAll.push('메롱') (X)안됨
+    $frAll.length
+
+    //유사 배열을 순수한 배열로 변경하기
+    const $fruitsArray = [...$frAll];
+    console.log($fruitsArray);
+    //배열문법 사용가능
+
+    $fruitsArray.pop().textContent = '오우렌쥐';
+    $fruitsArray.shift().textContent = '오우렌쥐';
+
+    //요소를 한번에 여러개 취득하는 기타 메서드들도 유사배열형태로 리턴됩니다.
+    const $frAllByTagName = document.getElementsByTagName('li')
+    console.log($frAllByTagName);
+
+    const $frAllByClassName = document.getElementsByClassName('fr')   //선택자 아니니까 클래스이름만 작성
+    console.log($frAllByTagName);
+
+
+    //요소 취득 후 스타일 주기 : 스타일명에 - 작성 하면안되고 카멜케이스로 작성
+    for(let $f of $fruitsArray) {
+      $f.style.border = '1px dashed tomato';
+      $f.style.fontSize = '2em';
+      $f.style.marginLeft = '10px';
+      $f.style.marginTop = '10px';
+
+    }
+
+
+  </script>
+
+
+
+</body>
+</html>
