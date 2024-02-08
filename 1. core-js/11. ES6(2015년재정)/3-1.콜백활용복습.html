@@ -80,7 +80,7 @@ console.log(result1);
 function filter(func) {
   const arrayList = [];
 
-  for(user of userList){
+  for(let user of userList){
     if(func(user)){
       arrayList.push(user);
     }
@@ -108,19 +108,18 @@ console.log(result5);
 
 
 //회원정보중에 회원이름만 전부 모아서 배열에 담아줘
-function filter(func) {
-  const arrayList = [];
+function filterName(code) {
+  const arrayLists = [];
 
-  for(user of userList){
-    if(func(user)){
-      arrayList.push(user);
+  for(let users of userList){
+    if(code(users)) {
+      arrayLists.push(users);
     }
   }return arrayList;
-  
+  console.log(users);
 }
 
-
-const 
+const name = filterName(users => console.log())
 
 
 
