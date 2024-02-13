@@ -27,7 +27,7 @@
 
     
 
-    //querySelector는 발견된 첫번쨰 태그만 가져옴.    //선택자 지목은 앞에 . 붙히는거 알지?
+    //querySelector는 발견된 첫번째 태그만 가져옴.    //선택자 지목은 앞에 . 붙히는거 알지?
     const $fr = document.querySelector('.fr');
     console.log($fr);
 
@@ -43,8 +43,9 @@
     //유사 배열을 순수한 배열로 변경하기
     const $fruitsArray = [...$frAll];
     console.log($fruitsArray);
-    //배열문법 사용가능
 
+
+    //배열문법 사용가능
     $fruitsArray.pop().textContent = '오우렌쥐';
     $fruitsArray.shift().textContent = '오우렌쥐';
 

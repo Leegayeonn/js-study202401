@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <button type="button" id="btn1">클릭하세요!</button>
+  <button type="button" id="btn2">마우스를 올려라</button>
+  <button type="button" id="btn3">마우스를 올렸다가 치우세요</button>
+
+
+
+
+  <script>
+
+
+    //이벤트 핸들러 정의
+    function hello() {
+      alert('Hello');
+    }
+
+
+    const $btn1 = document.getElementById('btn1');
+    const $btn2 = document.getElementById('btn2');
+    const $btn3 = document.getElementById('btn3');
+
+    // $btn1.onclick = hello;  -> 맞긴맞지만 아래 참고
+
+
+    //위에는 함수먼저 선언하고 할당한건데 이름안짓고 바로 함수 할당가능 ~!
+    $btn1.onclick = function() {
+      alert('안녕!');
+    }
+    $btn1.onclick = function() {
+      alert('안녕안함');
+    }
+
+    $btn2.onmouseover = function() {
+      alert('마우스 올리지마!');
+    }
+
+    $btn3.onmouseout = () => alert('마우스 치웠니?');  //한줄이기 때문에 생략! 화살표함수 사용함!
+
+    //핸들러 제거
+    $btn3.onmouseout = null; //일부러 값 비울때 :null , undefinded: 변수 선언후 값이 할당되지않은상태
+
+
+    //하나의 요소에 이벤트 2개를 걸면 마지막 이벤트만 보임 -> 프로퍼티방식의 한계(여러이벤트 못함)
+
+
+  </script>
+</body>
+
+</html>
