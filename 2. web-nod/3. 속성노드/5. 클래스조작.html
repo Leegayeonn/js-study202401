@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background: lightgray;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .red {
+        color: red;
+    }
+    .blue {
+        color: blue;
+    }
+    .circle {
+        border-radius: 50%;
+    }
+</style>
+
+</head>
+
+<body>
+  
+
+  <div class="box red">Hello</div>
+
+  <script>
+
+    const $box = document.querySelector('.box');
+    
+    //class속성 지목하기(여러가지 방법확인)
+    console.log($box.attributes.class.value);
+    console.log($box.getAttribute('class'));
+    console.log($box.className);
+
+    //class속성 값 바꾸기(2가지 방법)
+    //$box.setAttribute('class', 'box blue');
+    //$box.className = 'box blue';  //red만 바꾸고싶은데 box랑 둘다 지목해야하니까 굳이? 아래확인
+
+    //클래스를 각각조작할 때는 classList 프로퍼티를 사용하는게 좋습니다.
+    console.log($box.classList);
+    
+    // 요소에 클래스를 추가
+    //$box.className = 'box blue circle';
+    $box.classList.add('circle');
+    $box.classList.add('ac','bc','cd'); // add 여러번 할 필요없이 콤마찍으면 추가가능
+    
+
+    //요소에 특정 클래스를 교체
+    $box.classList.replace('red', 'blue'); //red를 blue로
+
+    //요소에 특정 클래스를 삭제
+    $box.classList.remove('circle');
+    $box.classList.remove('ac','bc','cd');
+
+    //요소에 특정 클래스가 존재하는지 확인
+    console.log($box.classList.contains('red'));
+
+
+    //toggle(): 해당 클래스가 존재하면 삭제, 존재하지 않으면 추가
+    $box.classList.toggle('circle');
+    $box.classList.toggle('blue');
+
+  </script>
+</body>
+</html>

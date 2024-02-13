@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <input type="text" id="name" value="kim" class="user-name">
+  
+  <p id="text">Hello</p>
+
+  <script>
+
+    const $input = document.querySelector('input[type=text'); //태그선택자로 지목/다르게 지목가능
+    console.log($input);
+
+
+
+
+    //input의 value라는 속성의 값을 알고싶다.
+    //const inputValue = $input.attributes.value.value;
+    //요소지목이 아니므로 $ 안붙힘
+    const inputValue = $input.getAttribute('value'); //어떤속성이든 getAttribute로 알아볼수있다
+    console.log(inputValue);
+
+
+    // value 속성의 값을 변경
+    // $input.attributes.value.value = '메롱';
+    $input.setAttribute('value', '안녕');
+
+    //p태그에 title 속성을 추가(기존에 있으면 변경되고 없으면 추가가 된다!)
+    const $paragraph = document.getElementById('text');
+    $paragraph.setAttribute('tltle', '하이잉')
+    console.log($paragraph);
+
+    //속성의 존재유무 (true or false)
+    console.log($input.hasAttribute('class')); //true
+    console.log($paragraph.hasAttribute('class')); //false
+
+    
+    if($input.hasAttribute('class')){
+      // class 라는 속성이 존재한다면 , class 속성을 지워라!
+      $input.removeAttribute('class');
+    }else {
+      //없으면 클래스를 새롭게 부여해라
+      $input.setAttribute('class','user-name');
+    }
+
+
+
+  </script>
+</body>
+</html>

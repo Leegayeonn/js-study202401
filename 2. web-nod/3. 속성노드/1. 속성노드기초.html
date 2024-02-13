@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <input type="text" id="name" value="kim" class="user-name">
+
+
+  <script>
+
+    const $input = document.querySelector('input'); //태그 선택자로 지목
+    console.log($input.attributes); //속성을 보겠다 속성확인! attributes:속성
+    console.log($input.attributes[0].value); //type의 value(값)만 알수있음
+    console.log($input.attributes.type.value);
+    console.log($input.attributes.id.value);
+    console.log($input.attributes.class.value);
+
+    $input.attributes.value.value = '메롱메롱'; 
+    //인풋태그의 여러가지 속성을 유사배열(객체)로 받아서 value값 변경하겠다
+    $input.attributes.type.value = 'password';
+    
+
+
+
+
+
+  </script>
+</body>
+</html>

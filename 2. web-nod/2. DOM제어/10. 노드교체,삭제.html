@@ -29,7 +29,7 @@
 
 
 
-    
+
 
     //아래 !! 나혼자 해본거임!
 
@@ -39,6 +39,9 @@
     $fruits.appendChild($peach); //peach 새롭게 생성
 
     $fruits.appendChild($mango); //mango 위치변경
+
+    const $mangoClone = $mango.cloneNode(true); //mango 복사
+    $fruits.appendChild($mangoClone);
 
 
   </script>
