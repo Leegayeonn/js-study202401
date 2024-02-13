@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <ul id="fruits">
+    <li class="apple">Apple</li>
+  </ul>
+
+  <script>
+
+    const $fruits = document.getElementById('fruits');
+    // console.log($fruit.innerHTML);
+
+    //노드 추가  //텍스트만이 아닌 코드 자체를 심을수있음
+    $fruits.innerHTML = '<li class="banana">Banana</li>'; //대입
+    $fruits.innerHTML += '<li class="grape">Grape</li>'; //기존거 두고 추가
+    console.log($fruits);
+
+    //노드 삭제
+    $fruits.innerHTML = '';  //아예 다 삭제하는것!
+
+    console.log(!!$fruits.children.length); //자식요소 있는지 확인하는것 논리 false나옴 위에 다 삭제했기떄문
+
+    /*
+    innerHTML로만 노드를 제어하지 말 것!
+    보안과 성능에 문제가 좀 있습니다.
+    HTML 변환이 필요한 문자열에만 사용을 하는 것이 좋고,
+    요소 전체를 삭제하는 정도로만 사용하세요.
+    */
+
+
+    $fruits.innerHTML = '안녕';
+    $fruits.innerHTML += '<span>하세요</span>'
+
+  </script>
+
+
+</body>
+</html>

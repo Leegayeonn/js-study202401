@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <ul id="fruits">
+    <li class="apple">Apple</li>
+    <li class="banana">Banana</li>
+    <li class="grape">Grape</li>
+  </ul>
+
+  <div id="test">
+
+  </div>
+  
+  <script>
+
+    //노드 탐색의 기점이 되는 ul요소 취득
+    const $fruits = document.getElementById('fruits')
+    
+    //기준 노드의 모든 자식 노드를 탐색. (텍스트 노드 포함)-중간중간에 텍스트 노드가있음(줄개행까지)
+    const $childNodes = $fruits.childNodes;  // 공백을 텍스트로 인식해서 모두 탐색.
+    console.log($childNodes);   //length 7
+
+
+    //자주사용!!
+    //기준 노드의 모든 자식 노드를 탐색. (텍스트 노드 제외, 요소들만!!!!!!!!!!!!!!!)
+    const $children = $fruits.children;
+    console.log($children);  //유사배열객체로 리턴(배열 모양이지만 배열아님 유사한배열객체)
+
+
+
+    //기준 노드의 첫번째 자식 노드를 탐색
+    const $firstChild = $fruits.firstChild;
+    console.log($firstChild);
+    console.log(`first-child : ${$firstChild}`);  //텍스트 노드 나올가능성있음.
+
+
+    //자주사용!!!!
+    console.log($fruits.firstElementChild);
+    console.log('first-element=child: ' + $fruits.firstElementChild); //첫번째 자식 요소 취득.
+    console.log($fruits.lastElementChild);
+    console.log('last-element=child: ' + $fruits.lastElementChild); //마지막 자식 요소 취득.
+
+
+
+    //기준 노드에 자식노드가 있는지의 여부를 확인.(true or false)
+    //텍스트 노드가 있을 시에는 true가 나올수있음.
+    const $test = document.getElementById('test');
+    console.log($test.hasChildNodes());  //함수라서 괄호 붙히기 
+    // 아무것도안쓰면 false
+    // 공백있으면 true
+    // 불확실함
+
+
+
+    //자주사용!!
+    //텍스트 노드를 제외한 요소노드의 존재여부확인
+    // console.log($test.children.length === 0); true ->자식이 없는거
+    console.log(!!$fruits.children.length);  //앞에 !!붙히면 논리값으로 변환 
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>

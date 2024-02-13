@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <ul id="fruits">
+    <li>Apple</li>
+    <li>Banana</li>
+  </ul>
+
+
+  <script>
+
+    const $fruits = document.getElementById('fruits');
+
+    const $mango = document.createElement('li');
+    $mango.textContent = 'Mango';
+
+    // 교체하기 !!!! replaceChild(new, old); (새로운거, 원래있던거)
+    $fruits.replaceChild($mango, $fruits.firstElementChild);
+
+    
+    // 삭제하기 !!!!! removeChild() 
+    $fruits.removeChild($fruits.lastElementChild);
+
+
+
+    
+
+    //아래 !! 나혼자 해본거임!
+
+    const $peach = document.createElement('li');
+    $peach.textContent = 'Peach';
+
+    $fruits.appendChild($peach); //peach 새롭게 생성
+
+    $fruits.appendChild($mango); //mango 위치변경
+
+
+  </script>
+</body>
+</html>
