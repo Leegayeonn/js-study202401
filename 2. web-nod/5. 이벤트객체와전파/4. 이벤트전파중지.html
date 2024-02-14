@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .root {
+        width: 500px;
+        height: 500px;
+        background: red;
+    }
+
+    .parent {
+        width: 50%;
+        height: 50%;
+        background: orange;
+    }
+
+    .child {
+        width: 50%;
+        height: 50%;
+        background: skyblue;
+    }
+</style>
+</head>
+<body>
+  
+  <a href="http://www.naver.com">네이버로 이동</a>
+
+  <br>
+
+  <div class="root">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </div>
+
+
+  <script>
+
+    //태그 고유기능을 막는 메서드 : preventDefault()
+    //이벤트 전파를 막는 메서드 : stopPropagation()
+    //메서드 : 객체함수
+
+
+    document.querySelector('.root').addEventListener('click', e => {
+      alert('root');
+    });
+
+    document.querySelector('.parent').addEventListener('click', e => {
+      alert('parent');
+    });
+
+    document.querySelector('.child').addEventListener('click', e => {
+      alert('child');
+      e.stopPropagation();  //이벤트 전파를 막음(자식을 품고있는 부모까지 전파되는것을 막음)
+    });
+
+
+
+
+    const $link = document.querySelector('a');
+    $link.addEventListener('click', e => {
+      if(!confirm('정말 이동하시겠습니까?')){  //false가 되면 함수 실행, 사용자가 취소를 선택하면
+        //return;  -> a태그의 고유 기능은 막을수 없다
+        e.preventDefault();  //태그 고유기능을 막음. (form submit에도 많이 사용)
+      }
+    });
+
+
+  
+
+
+  </script>
+</body>
+</html>

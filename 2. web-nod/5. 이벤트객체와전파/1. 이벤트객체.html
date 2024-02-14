@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<P>아무곳이나 클릭하세요!</P>
+
+<input type="checkbox">
+
+<em class="message"></em> <br>
+
+<hr>
+
+<input type="text" id="input=text">
+<p class="msg"></p>
+
+
+
+  <script>
+
+    const $em = document.querySelector('.message');
+
+    //문서 전체에 이벤트 핸들러 등록(화면 아무곳에 눌러도 함수호출)
+    
+    //이벤트 핸들러의 첫번째 인수로 이벤트에 관련된 다양한 정보가 들어있는 
+    //이벤트 객체가 자동전달됩니다.
+    //핸들러 내에서 이벤트 객체를 사용하려면 적당한 매개변수를 선언해서 사용하면됨.
+    //밑에 예시로 e 라고 해놓은거임 아무거나 해도됨 근데거의 e 많이쓴다고함
+    /*
+    document.addEventListener('click', function(e){
+      console.log('클릭 이벤트 발생!');
+      console.log(e);
+
+      $em.textContent = `x좌표: ${e.offsetX}, y좌표: ${e.offsetY}`;
+    });
+    */
+
+    const $checkbox = document.querySelector('input[type=checkbox]');
+
+    $checkbox.addEventListener('change', function(e) {
+      //실제 이벤트가 발생한 요소 -> 많이 사용됨! (e.target)
+      //console.log(e.target); //결과 : <input type="checkbox">  -> 이벤트가 발생한 곳 확인!
+
+      //체크박스 or radio(동그라미 체크버튼) 버튼의 체크 유무를 확인하는 프로퍼티
+      if(e.target.checked){ //true or false가 온다!
+        $em.textContent = '체크됨!';
+      }else {
+        $em.textContent = '체크안됨';
+      }
+
+    });
+
+    //////////////////////////////////////////////////////////////////////////////////////
+
+    //키보드 이벤트!
+
+    const $input = document.getElementById('input=text');
+    const $msg = document.querySelector('.msg');
+
+    $input.addEventListener('keyup', e => {   //사용자가 키를 입력하면 발생:keydown (e) => {}
+    //console.log('keyup 이벤트 발생!');
+    //console.log(`입력한 값 : ${e.target.value}`); //e.target -> $input
+    //console.log(e.keyCode);  
+
+    
+    if(e.keyCode === 13){ //엔터키의 키코드는 13번임!
+      $msg.textContent = `입력한 값이 :${e.target.value}입니다.`;
+      e.target.value = ''; //입력창 제거
+    }else if (e.keyCode === 27) {  //esc 키코드는 27!
+      $msg.textContent = '';  //p태그내용 지우기
+    }
+    });
+    //keyup: 키보드를 눌렀다가 떼면 발생
+    //keydown: 즉시실행
+    
+
+
+
+  </script>
+</body>
+</html>
