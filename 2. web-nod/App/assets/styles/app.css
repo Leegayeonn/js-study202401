@@ -1,0 +1,110 @@
+
+* {
+  box-sizing: border-box;
+}
+/*전체 선택자 '*'  */
+
+
+html {
+  font-family: 'Roboto', open-sans;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background: yellowgreen;
+  color: #fff;
+  padding: 1rem;  /*html font 16px -> rem은 html폰트사이즈대비*/
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  width: 100%;
+}
+
+.card {
+  margin: 2rem auto;
+  width: 40rem;
+  max-width: 90%;  /*최대 가로길이*/
+  border: 1px solid green;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #025702;
+}
+
+#calculator input {
+  font: inherit;
+  font-size: 3rem;      /*폰트 사이즈 키우면 인풋세로길이 늘어남*/
+  border: 2px solid #025702;
+  width: 10rem;
+  display: block;
+  margin: auto;
+  padding: 0.15rem;
+  color: #025702;
+  text-align: center;
+}
+
+#calculator input:focus {   /*인풋 클릭(포커스)되면 아웃라인이 생기는걸 없애기위함*/
+  outline: none;
+}
+
+#calculator button {
+  font: inherit;
+  background: yellowgreen;
+  color: #fff;
+  border: 1px solid #025702;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#calculator button:focus {
+  outline: none;
+}
+
+#calculator button:hover,
+#calculator button:active {
+  background: #78a027;
+  border: #78a027;
+}
+
+#calc-actions button {
+  width: 4rem;
+}
+
+#calc-actions {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#results {
+  text-align: center;
+}
+
+#logs {
+  min-height: 10rem;
+  max-height: 15rem;
+  padding: 2rem 5rem;
+  overflow: auto;
+}
+
+.log-entries {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f55f5f;
+}
+
+.log-entries .log-entries-item {
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #ffa6a6;
+  padding: 0.75rem;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
