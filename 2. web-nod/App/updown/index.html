@@ -13,9 +13,12 @@
       <link rel="stylesheet" href="./assets/css/main.css">
       
       <!-- app.js -->
-      <script src="./assets/js/app.js" defer></script>
+      <!-- 외부 자바스크립트 파일을 불러올때 해당 파일이 모듈 문법(export) 포함된 문법을 사용하고,
+          그것을 import 하는 파일이라면 type="module"을 선언해주셔야 로딩이 가능하다-->
+      <script type="module" src="./assets/js/app.js" defer></script>
+     
 
-</head>
+    </head>
 <body>
 
   <div class="wrapper">
@@ -28,7 +31,7 @@
         </h2>
         <div id="numbers">
           <!-- .icon{$} * 100-->
-          <div class="icon">1</div>
+          <!-- <div class="icon">1</div>
           <div class="icon">2</div>
           <div class="icon">3</div>
           <div class="icon">4</div>
@@ -39,7 +42,7 @@
           <div class="icon">9</div>
           <div class="icon">10</div>
           <div class="icon">11</div>
-          <div class="icon">12</div>
+          <div class="icon">12</div> -->
         </div>
       </div>
     </section>
