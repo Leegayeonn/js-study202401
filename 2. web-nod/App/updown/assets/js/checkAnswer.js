@@ -66,12 +66,12 @@ function correctAnswer($icon) {
   // 1. #finish 박스에 class 'show' 부여
   const $correctAnswer = document.getElementById('finish');
   $correctAnswer.classList.add('show');
+
   // 2. #numbers 클릭 이벤트 해제
   $numbers.onclick = null;
 
   // 3. 사용자가 선택한 아이콘에 id 'move' 추가
-  const $correctIcon = document.getElementById('correctIcon')
-  $correctIcon.id = move;
+  $icon.setAttribute('id', 'move');
   
 };
 
